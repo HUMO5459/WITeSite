@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+<body class="body">
+
+
+<style>
+
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+
+}
+.project1{
+    height: 90px;
+    width: 100%;
+    background-color: #010001;
+    display: flex;
+    justify-content: space-between;
+
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+    width: 120px;
+    margin: 0;
+}
+.loggo{
+    margin-left: 60px;
+    width: 100px;
+}
+.nav-list{
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 90px;
+    background: #2A3B51;
+    float: right;
+    text-align: center;
+    transition: all .5s;
+}
+.nav-list{
+    position: fixed !important;
+}
+.nav-list li{
+    opacity: 0;
+    line-height: 30px;
+    margin: 50px 0;
+    transition: all .5s;
+}
+.nav-list li a{
+    position: relative
+    color: #F0F0F0;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 8px 10px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+.nav-list li a{
+    color: #F0F0F0 !important;
+}
+
+.nav-list li a:hover{
+    color: #FD1818;
+    transition: 0.5s;
+    text-decoration: none;
+}
+.nav-list li a:hover{
+    color: #FD1818 !important;
+}
+.hamburger-btn{
+    display: block;
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 65px;
+    margin-right: 50px;
+    margin-top: 18px;
+    cursor: pointer;
+}
+#check{
+    display: none;
+}
+#check:checked ~ .nav-list{
+    height: 100vh;
+}
+#check:checked ~ .nav-list li{
+    opacity: 1;
+}
+.loggo img{
+    width: 150px;
+}
+
+
+@media only screen and (min-width: 900px){
+    .logo-container{
+        margin-left: 25px;
+    }
+    .project1{
+        height: 100px;
+        background-color: #010001;
+    }
+    .hamburger-btn{
+        display: none;
+    }
+    .nav-list{
+        position: relative;
+        top: 0;
+        background: none;
+        float: right;
+        text-align: right;
+        margin-right: 15px;
+        transition: none;
+    }
+    .nav-list li{
+        display: inline-block !important;
+        opacity: 1;
+        line-height: 100px;
+        margin: 0 20px;
+        transition: none;
+    }
+    .nav-list li a:hover{
+        color: #FD1818;
+    }
+    .loggo img{
+    width: 220px;
+    }
+}
+.footer-right p{
+    color: #E0A131 !important;
+}
+
+
+
+
+
+
+
+
+.mains{
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    color: #F0EAD6
+}
+.mains h1{
+    color: #F0251A;
+    text-align: center;
+}
+.mains p{
+    text-align: center;
+    font-size: 19px;
+}
+.mains:hover{
+    background-color: #838996;
+    transition: all 1s ease;
+}
+.mains p:hover{
+    color: #34FD3A;
+    transition: all 0.5s ease;
+}
+.hamburg h1{
+    padding-top: 70px;
+}
+
+@media only screen and (max-width: 1200px){
+    .footer-right p{
+        display: none;
+    }
+}
+@media only screen and (max-width: 700px){
+    .footer-distributed h3{
+        font-size: 15px;
+    }
+}
+
+
+
+
+</style>
+
+
+
+
+
+<div class="project1">
+        <div class="logo-container">
+            <div class="loggo"><img src="{% static 'css/images/ch.png' %}"></div>
+        </div>
+        <input type="checkbox" id="check">
+        <label for="check" class="hamburger-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+         <ul class="nav-list">
+             <li class="kik"><a href="{% url 'home' %}">Home</a></li>
+             <li><a href="{% url 'about' %}">About</a></li>
+             <li><a href="{% url 'services' %}">Services</a></li>
+             <li><a href="{% url 'projects' %}">Projects</a></li>
+             <li><a href="{% url 'contact' %}">Contact</a></li>
+         </ul>
+</div>
+
+
+
+
+
+<div class="mains">
+    <div class="hamburg">
+        <h1>Gas inno</h1>
+        <p>The Gas Innovation Technologies project is a new project throughout Uzbekistan. This is a large project that is mainly used to control the gases installed in the machines of large organizations</p>
+    </div>
+    <div>
+        <h1>Vision Swipe</h1>
+        <p>A high-tech operating and service platform. It includes technologies that work without human intervention. These include Face ID, Touch ID, RFID, Face, Eye, Voice Recognition, KeyPad identification.A high-tech operating and service platform. It includes technologies that work without human intervention. These include Face ID, Touch ID, RFID, Face, Eye, Voice Recognition, KeyPad identification.</p>
+    </div>
+    <div>
+        <h1>Shakh 3D Print</h1>
+        <p>We offer you 3d printer services. Create different models and draw them with the help of a constructor.</p>
+    </div>
+    <div>
+        <h1>Web Development</h1>
+        <p>BIOSTART - A fingerprint, keyless, unlocking device that provides some energy savings. Mainly for cars.</p>
+    </div>
+
+</div>
+
+
+
+
+<footer class="footer-distributed">
+        <div id="footer-left">
+            <h3>WITe<span>Engineering</span></h3>
+            <p class="footer-links">
+                <a href="{% url 'home' %}">Home</a>
+                |
+                <a href="{% url 'about' %}">About</a>
+                |
+                <a href="{% url 'services' %}">Services</a>
+                |
+                <a href="{% url 'projects' %}">Projects</a>
+                |
+                <a href="{% url 'contact' %}">Contact</a>
+            </p>
+            <div class="footer-company-name" style="color:#92999F">Copyright ⓒ 2022 <strong>WITe engineering</strong>
+                All rights reserved!</div>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <a href="https://www.google.com/search?q=gani+azamaov+choyxona+google+map&oq=ga&aqs=chrome.0.69i59j69i57j35i39j0i512l4j69i61.1477j0j7&sourceid=chrome&ie=UTF-8"><i class="fa fa-map-marker"></i></a>
+                <p><span>Tashkent, Gani Azamov</span></p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p style="color: #D1932E">+998 91 439 21 35</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a style="color: #FFFFF9">witeengineering@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the Company</span>
+                This company can do all kinds of software and hardware services. You will find all the news about us on the following social networks!
+            </p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/witeuz"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/witeengineering/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/78411424/admin/"><i class="fa fa-linkedin"></i></a>
+                <a href="https://t.me/WITeuz"><i class="fa fa-telegram"></i></a>
+                <a href="https://www.youtube.com/channel/UC_5k7n-nM3XLLcIzU1QXGlA"><i class="fa fa-youtube"></i></a>
+                <a href="https://vm.tiktok.com/ZSeTYrYRF/"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.google.com/search?q=gani+azamaov+choyxona+google+map&oq=ga&aqs=chrome.0.69i59j69i57j35i39j0i512l4j69i61.1477j0j7&sourceid=chrome&ie=UTF-8"><i class="fa fa-map-marker"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

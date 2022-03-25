@@ -1,0 +1,479 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+
+<style>
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+
+}
+.project1{
+    height: 90px;
+    width: 100%;
+    background-color: #010001;
+    display: flex;
+    justify-content: space-between;
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+    width: 120px;
+    margin: 0;
+}
+.loggo{
+    margin-left: 60px;
+    width: 100px;
+
+}
+.nav-list{
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 90px;
+    background: #2A3B51;
+    float: right;
+    text-align: center;
+    transition: all .5s;
+}
+.nav-list{
+    position: fixed !important;
+}
+.nav-list li{
+    opacity: 0;
+    line-height: 30px;
+    margin: 50px 0;
+    transition: all .5s;
+}
+.nav-list li a{
+    position: relative
+    color: #F0F0F0;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 8px 10px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+.nav-list li a{
+    color: #F0F0F0 !important;
+}
+
+.nav-list li a:hover{
+    color: #FD1818;
+    transition: 0.5s;
+    text-decoration: none;
+}
+.nav-list li a:hover{
+    color: #FD1818 !important;
+}
+.hamburger-btn{
+    display: block;
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 65px;
+    margin-right: 50px;
+    margin-top: 18px;
+    cursor: pointer;
+}
+#check{
+    display: none;
+}
+#check:checked ~ .nav-list{
+    height: 100vh;
+}
+#check:checked ~ .nav-list li{
+    opacity: 1;
+}
+.loggo img{
+    width: 150px;
+}
+
+
+@media only screen and (min-width: 900px){
+    .logo-container{
+        margin-left: 25px;
+    }
+    .project1{
+        height: 100px;
+        background-color: #010001;
+    }
+    .hamburger-btn{
+        display: none;
+    }
+    .nav-list{
+        position: relative;
+        top: 0;
+        background: none;
+        float: right;
+        text-align: right;
+        margin-right: 15px;
+        transition: none;
+    }
+    .nav-list li{
+        display: inline-block !important;
+        opacity: 1;
+        line-height: 100px;
+        margin: 0 20px;
+        transition: none;
+    }
+    .nav-list li a:hover{
+        color: #FD1818;
+    }
+    .loggo img{
+    width: 220px;
+    }
+}
+.kill{
+    font-size: 50px;
+    color: #FFFFFF;
+    margin-left: 60px;
+}
+.footer-right p{
+    color: #E0A131 !important;
+}
+
+
+
+
+/* ======================  SECTION HERE   =======================  */
+
+
+
+.banner-card img{
+    width: 100%;
+    height: 690px;
+    text-align: center;
+}
+.banner-text{
+    position: relative;
+    max-width: 1000px;
+    text-size: 150px;
+}
+.banner-card figcaption{
+    position: absolute;
+    bottom: 110px;
+    left: 55px;
+    color: #F4A41B;
+    background: #AAF7E4
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font-size: 45px;
+}
+.picture b{
+    color: #2472E7;
+}
+.picture b:hover{
+    color: #F4A41B;
+    cursor: pointer;
+    font-size: 30px
+    transform: scale(1.05);
+    transition: all 1s ease;
+}
+.Section_top p:hover{
+    color: #2EA8F4;
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 1s ease;
+}
+.banner-card figcaption p{
+    font-size: 35px;
+    color: #E1E1E1;
+}
+
+
+.kill{
+    font-size: 50px;
+    color: #FFFFFF;
+    margin-left: 60px;
+}
+.kill{
+    color: #FFFFFF !important;
+}
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: wrap;
+    text-align: center;
+}
+.cardt{
+    width: 23%;
+    height: 450px;
+    background: #FFFFFF;
+    margin: 9px;
+    border-radius: 16px;
+    text-align: center;
+
+}
+
+.cardt:hover{
+    background-color: #B0B0B0;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all .5s ease;
+    color: #FF2718;
+}
+
+.cardt p{
+    font-size: 16px;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+.cardt h2{
+    margin-left: 8px;
+}
+.card-image{
+    height: 210px;
+    margin-bottom: 10px;
+    background-size: cover;
+    border-radius: 16px 16px 0 0;
+}
+.card-1 {
+    background-image: url("/static/css/images/aut.jpg")
+}
+.card-2 {
+    background-image: url("/static/css/images/il.jpg")
+}
+.card-3 {
+    background-image: url("/static/css/images/ha.jpg")
+}
+.card-4 {
+    background-image: url("/static/css/images/ai.jpg")
+}
+
+
+
+
+@media only screen and (max-width: 1300px){
+    .cardt{
+        width: 20%;
+    }
+}
+@media only screen and (max-width: 1210px){
+    .cardt{
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 600px){
+    .cardt{
+        width: 60%;
+    }
+    .container{
+        justify-content: center;
+    }
+    .cardt{
+        text-align: center;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 700px){
+    .footer-distributed h3{
+        font-size: 15px;
+    }
+    .kill p{
+        font-size: 20px;
+        text-align: center;
+    }
+    .banner-card img{
+        width: 100%;
+        height: 300px;
+    }
+}
+
+
+@media only screen and (max-width: 1200px){
+    .footer-right p{
+        display: none;
+    }
+    .banner-text{
+        font-size: 25px;
+    }
+}
+
+
+
+
+
+</style>
+
+
+
+
+
+<body class="body">
+
+
+<div class="project1">
+    <div class="logo-container">
+        <div class="loggo"><img src="{% static 'css/images/ch.png' %}"></div>
+    </div>
+    <input type="checkbox" id="check">
+    <label for="check" class="hamburger-btn">
+        <i class="fas fa-bars"></i>
+    </label>
+     <ul class="nav-list">
+         <li class="kik"><a href="{% url 'home' %}">Home</a></li>
+         <li><a href="{% url 'about' %}">About</a></li>
+         <li><a href="{% url 'services' %}">Services</a></li>
+         <li><a href="{% url 'projects' %}">Projects</a></li>
+         <li><a href="{% url 'contact' %}">Contact</a></li>
+     </ul>
+</div>
+
+
+<!--    #=======================      SECTION  HERE     ======================-->
+
+    <div class="Section_top">
+        <div>
+            <figure class="banner-card">
+                <img src="{% static 'css/images/wit.png'%}">
+
+            <figcaption class="banner-text">
+                <div class="picture">
+                 <b>WITe - World Innovation
+                  <br>
+                  Technologies
+                  <br>
+                  Engineering company.<br></b>
+                </div>
+                <p>
+                  <br>
+                  WITe is an engineering company
+                  <br>
+                  specializing in the development of
+                  <br>
+                  microelectronics and hardware
+                </p>
+            </figcaption>
+        </figure>
+        </div>
+    </div>
+
+    <section>
+<!--#=======================      WHY CHOOSE US  HERE     ======================-->
+        <div class="feateured">
+            <div class="kill"><p>Why Choose Us?</p></div>
+            <ul class="container">
+
+                <div class="cardt">
+                  <div class="card-image card-1">
+                  </div>
+                      <h2>Technology</h2>
+                    <p>
+                      It’s difficult to imagine life in the 21st century without technology
+                    </p>
+                </div>
+
+                <div class="cardt">
+                  <div class="card-image card-2">
+                  </div>
+                      <h2>Optimal Solutions for your Ideas</h2>
+                    <p>
+                      An optimal solution is a feasible solution where the objective function reaches its maximum (or minimum) value
+                    </p>
+                </div>
+
+                <div class="cardt">
+                  <div class="card-image card-3">
+                  </div>
+                      <h2>Electronics and Hardware services</h2>
+                     <p>
+                      Electronic hardware consists of interconnected electronic components which perform analog or logic operations
+                    </p>
+                </div>
+
+                <div class="cardt">
+                  <div class="card-image card-4">
+                  </div>
+                      <h2>Artificial Intelligence </h2>
+                    <p>
+                      Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems
+                    </p>
+                </div>
+
+            </ul>
+        </div>
+     </section>
+
+
+
+<!--    #=======================      FOOTER  HERE     ======================-->
+
+
+    <footer class="footer-distributed">
+        <div id="footer-left">
+            <h3>WITe<span>Engineering</span></h3>
+            <p class="footer-links">
+                <a href="{% url 'home' %}">Home</a>
+                |
+                <a href="{% url 'about' %}">About</a>
+                |
+                <a href="{% url 'services' %}">Services</a>
+                |
+                <a href="{% url 'projects' %}">Projects</a>
+                |
+                <a href="{% url 'contact' %}">Contact</a>
+            </p>
+            <div class="footer-company-name" style="color:#92999F">Copyright ⓒ 2022 <strong>WITe engineering</strong>
+                All rights reserved!</div>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <a href="https://www.google.com/maps/place/%22G%E2%80%98ani+Azamov%22+choyxonasi/@41.3520853,69.2302501,15.6z/data=!4m12!1m6!3m5!1s0x0:0x74e2af16390be78e!2zIkfigJhhbmkgQXphbW92IiBjaG95eG9uYXNp!8m2!3d41.3513413!4d69.2303594!3m4!1s0x38ae8c662231b9e7:0x74e2af16390be78e!8m2!3d41.3513413!4d69.2303594"><i class="fa fa-map-marker"></i></a>
+                <p><span>Tashkent, Gani Azamov</span></p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p style="color: #D1932E">+998 91 439 21 35</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a style="color: #FFFFF9">witeengineering@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the Company</span>
+                This company can do all kinds of software and hardware services. You will find all the news about us on the following social networks!
+            </p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/witeuz"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/witeengineering/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/78411424/admin/"><i class="fa fa-linkedin"></i></a>
+                <a href="https://t.me/WITeuz"><i class="fa fa-telegram"></i></a>
+                <a href="https://www.youtube.com/channel/UC_5k7n-nM3XLLcIzU1QXGlA"><i class="fa fa-youtube"></i></a>
+                <a href="https://vm.tiktok.com/ZSeTYrYRF/"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.google.com/maps/place/%22G%E2%80%98ani+Azamov%22+choyxonasi/@41.3520853,69.2302501,15.6z/data=!4m12!1m6!3m5!1s0x0:0x74e2af16390be78e!2zIkfigJhhbmkgQXphbW92IiBjaG95eG9uYXNp!8m2!3d41.3513413!4d69.2303594!3m4!1s0x38ae8c662231b9e7:0x74e2af16390be78e!8m2!3d41.3513413!4d69.2303594"><i class="fa fa-map-marker"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+{% endblock content %}
+
+
+
+
+
+

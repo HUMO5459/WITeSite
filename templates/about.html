@@ -1,0 +1,388 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+
+
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+/*
+.section{
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}*/
+
+
+.project1{
+    height: 90px;
+    width: 100%;
+    background-color: #010001;
+    display: flex;
+    justify-content: space-between;
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+    width: 120px;
+    margin: 0;
+}
+.loggo{
+    margin-left: 60px;
+    width: 100px;
+}
+.nav-list{
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 90px;
+    background: #2A3B51;
+    float: right;
+    text-align: center;
+    transition: all .5s;
+}
+.nav-list{
+    position: fixed !important;
+}
+.nav-list li{
+    opacity: 0;
+    line-height: 30px;
+    margin: 50px 0;
+    transition: all .5s;
+}
+.nav-list li a{
+    position: relative
+    color: #F0F0F0;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 8px 10px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+.nav-list li a{
+    color: #F0F0F0 !important;
+}
+
+.nav-list li a:hover{
+    color: #FD1818;
+    transition: 0.5s;
+    text-decoration: none;
+}
+.nav-list li a:hover{
+    color: #FD1818 !important;
+}
+.hamburger-btn{
+    display: block;
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 65px;
+    margin-right: 50px;
+    margin-top: 18px;
+    cursor: pointer;
+}
+#check{
+    display: none;
+}
+#check:checked ~ .nav-list{
+    height: 100vh;
+}
+#check:checked ~ .nav-list li{
+    opacity: 1;
+}
+.loggo img{
+    width: 150px;
+}
+
+@media only screen and (min-width: 900px){
+    .logo-container{
+        margin-left: 25px;
+    }
+    .project1{
+        height: 100px;
+        background-color: #010001;
+    }
+    .hamburger-btn{
+        display: none;
+    }
+    .nav-list{
+        position: relative;
+        top: 0;
+        background: none;
+        float: right;
+        text-align: right;
+        margin-right: 15px;
+        transition: none;
+    }
+    .nav-list li{
+        display: inline-block !important;
+        opacity: 1;
+        line-height: 100px;
+        margin: 0 20px;
+        transition: none;
+    }
+    .nav-list li a:hover{
+        color: #FD1818;
+    }
+    .loggo img{
+    width: 220px;
+    }
+}
+.footer-right p{
+    color: #E0A131 !important;
+}
+
+
+@media only screen and (max-width: 1200px){
+
+    .banner1{
+        display: none;
+    }
+    .banner2{
+        display: none;
+    }
+    .footer-right p{
+        display: none;
+    }
+    .aboutp2 p{
+        margin: 5px 5px 5px 5px;
+    }
+
+}
+@media only screen and (max-width: 700px){
+    .footer-distributed h3{
+        font-size: 15px;
+    }
+}
+
+
+
+.section{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    overflow: hidden;
+    background-color: #364377;
+}
+
+.aboutp1{
+    color: #F0F0F0;
+    text-align: center;
+    background-color: #364377;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 40px;
+    letter-spacing: 1px;
+}
+.aboutp2 p{
+    margin: 50px 50px 50px 50px;
+
+}
+.banner1 img{
+    margin-left: 40px;
+    top: 50px;
+    width: 650px;
+}
+.text-box{
+    width: 600px;
+    position: absolute;
+    top: 505px;
+    left: 45%;
+    color: #C8C8C8;
+}
+.text-box h1{
+    color: #ffff;
+}
+.text-box  .strong1{
+    font-size: 25px;
+}
+.text-box p{
+    font-size: 20px;
+    letter-spacing: 0.3px
+}
+.text-box span{
+    background: red;
+    height: 1.5px;
+    width: 172px;
+    position: absolute;
+    left: 0;
+}
+
+.text-box1{
+    width: 750px;
+    float: left;
+    left: 45%;
+    color: #C8C8C8;
+    padding-left: 150px;
+    padding-top: 90px;
+}
+.text-box1 h1{
+    color: #ffff;
+}
+.banner2 img{
+    margin-right: 40px;
+    top: 50px;
+    float: right;
+    width: 560px;
+
+}
+.text-box1  .strong1{
+    font-size: 25px;
+}
+.text-box1 p{
+    font-size: 20px;
+    letter-spacing: 0.3px
+    padding-buttom: 50px;
+}
+.text-box1 span{
+    background: red;
+    height: 1.5px;
+    width: 172px;
+    position: absolute;
+    left: 150px;
+}
+
+
+</style>
+
+
+
+
+
+
+
+<body class="body">
+
+<!--  #=======================      NAV  HERE     ======================-->
+
+    <div class="project1">
+        <div class="logo-container">
+            <div class="loggo"><img src="{% static 'css/images/ch.png' %}"></div>
+        </div>
+        <input type="checkbox" id="check">
+        <label for="check" class="hamburger-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+         <ul class="nav-list">
+             <li class="kik"><a href="{% url 'home' %}">Home</a></li>
+             <li><a href="{% url 'about' %}">About</a></li>
+             <li><a href="{% url 'services' %}">Services</a></li>
+             <li><a href="{% url 'projects' %}">Projects</a></li>
+             <li><a href="{% url 'contact' %}">Contact</a></li>
+         </ul>
+    </div>
+
+
+<!--    #=======================      SECTION  HERE     ======================-->
+
+    <section class="section">
+
+        <div class="aboutp2">
+            <p class="aboutp1">
+            Since 2019, WITe engineering has been successfully developing and presenting its microelectronics, IoT, PLC, electronic board, web technologies and artificial intelligence in the domestic and international markets.
+            We provide excellent services to entrepreneurs, individuals and legal entities, the international and domestic public sectors, as well as all types of institutions and organizations.
+            Our goal is to facilitate people’s lifestyles and make them interested.
+        </p>
+        </div>
+        <div class="banner1">
+            <img src="{% static 'css/images/Shox.png' %}">
+            <div class="text-box">
+                <h1>Shokhrukh Khaydarov</h1>
+                <span></span>
+                <p><strong class="strong1">Founder of WITe engineering</strong>
+                 Shokhrukh Khaydarov as CEO (CEO) in February 2018. Prior to WITe, Shokhrukh served as a hardware engineer at the "AGRO Industrial Complex" under the Cabinet of Ministers of the Republic of Uzbekistan.</p>
+            </div>
+        </div>
+
+        <div class="banner2">
+            <img src="{% static 'css/images/Xumoy.png' %}">
+            <div class="text-box1">
+                <h1>Khumoyun Khaydarov</h1>
+                <span></span>
+                <p><strong class="strong1">Co-founder of WITe engineering</strong>
+                    Khumoyun Khaydarov co-founded WITe in 2018 and is the Chief Technology Officer (CTO) of the company. Winner of the International Robotics Olympiad, the First Global Competition in Mexico and the GRound D Competition at the International Robotics Olympiad in Dongho, Korea.
+                </p>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+<!--    #=======================      FOOTER  HERE     ======================-->
+
+
+     <footer class="footer-distributed">
+        <div id="footer-left">
+            <h3>WITe<span>Engineering</span></h3>
+            <p class="footer-links">
+                <a href="{% url 'home' %}">Home</a>
+                |
+                <a href="{% url 'about' %}">About</a>
+                |
+                <a href="{% url 'services' %}">Services</a>
+                |
+                <a href="{% url 'projects' %}">Projects</a>
+                |
+                <a href="{% url 'contact' %}">Contact</a>
+            </p>
+            <div class="footer-company-name" style="color:#92999F">Copyright ⓒ 2022 <strong>WITe engineering</strong>
+                All rights reserved!</div>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <a href="https://www.google.com/search?q=gani+azamaov+choyxona+google+map&oq=ga&aqs=chrome.0.69i59j69i57j35i39j0i512l4j69i61.1477j0j7&sourceid=chrome&ie=UTF-8"><i class="fa fa-map-marker"></i></a>
+                <p><span>Tashkent, Gani Azamov</span></p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+998 91 439 21 35</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a>witeengineering@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the Company</span>
+                This company can do all kinds of software and hardware services. You will find all the news about us on the following social networks!
+            </p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/witeuz"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/witeengineering/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/78411424/admin/"><i class="fa fa-linkedin"></i></a>
+                <a href="https://t.me/WITeuz"><i class="fa fa-telegram"></i></a>
+                <a href="https://www.youtube.com/channel/UC_5k7n-nM3XLLcIzU1QXGlA"><i class="fa fa-youtube"></i></a>
+                <a href="https://vm.tiktok.com/ZSeTYrYRF/"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.google.com/search?q=gani+azamaov+choyxona+google+map&oq=ga&aqs=chrome.0.69i59j69i57j35i39j0i512l4j69i61.1477j0j7&sourceid=chrome&ie=UTF-8"><i class="fa fa-map-marker"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+{% endblock content %}
